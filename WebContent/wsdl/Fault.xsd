@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" 
+	targetNamespace="http://www.windmolenproject.com/Fault">
+
+	<xs:simpleType name="code">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="4" />
+			<xs:maxLength value="50" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="capaciteit">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="40" />
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

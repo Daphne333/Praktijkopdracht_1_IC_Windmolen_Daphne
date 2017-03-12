@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.windmolenproject.com/WindmolenResponse"
+	elementFormDefault="qualified" 
+	targetNamespace="http://www.windmolenproject.com/WindmolenResponse">
+
+	<xs:element name="readWindmolenResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="readWindmolenReturn" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="createWindmolenResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="createWindmolenReturn" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

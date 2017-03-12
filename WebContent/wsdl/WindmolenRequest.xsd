@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+	xmlns:ft="http://www.windmolenproject.com/Fault"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.windmolenproject.com/WindmolenRequest"
+	elementFormDefault="qualified" targetNamespace="http://www.windmolenproject.com/WindmolenRequest">
+	
+	<xs:import namespace="http://www.windmolenproject.com/Fault"
+	schemaLocation="Fault.xsd" />
+	<xs:annotation>
+		<xs:appinfo>windmolenRequest</xs:appinfo>
+		<xs:documentation xml:lang="nl">
+			code staat voor de unieke
+			code die de windmolen heeft.
+			type staat voor het type windmolen
+			capaciteit staat voor de capaciteit van de windmolen.
+			path is het pad waar je het textbestand heen wilt schrijven
+		</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="readWindmolen">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="path" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="createWindmolen">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="code" type="ft:code" />
+				<xs:element name="type" type="xs:string" />
+				<xs:element name="capaciteit" type="ft:capaciteit" />
+				<xs:element name="path" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

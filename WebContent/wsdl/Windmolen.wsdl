@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://www.windmolenproject.com" xmlns:intf="http://www.windmolenproject.com" xmlns:req="http://www.windmolenproject.com/WindmolenRequest" xmlns:resp="http://www.windmolenproject.com/WindmolenResponse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.windmolenproject.com">
+
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import namespace="http://www.windmolenproject.com/WindmolenRequest" schemaLocation="WindmolenRequest.xsd"/>
+			<xsd:import namespace="http://www.windmolenproject.com/WindmolenResponse" schemaLocation="WindmolenResponse.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="createWindmolenResponse">
+
+		<wsdl:part element="resp:createWindmolenResponse" name="parameters">
+
+		</wsdl:part>
+
+	</wsdl:message>
+
+	<wsdl:message name="readWindmolenRequest">
+
+		<wsdl:part element="req:readWindmolen" name="parameters">
+
+		</wsdl:part>
+
+	</wsdl:message>
+
+	<wsdl:message name="createWindmolenRequest">
+
+		<wsdl:part element="req:createWindmolen" name="parameters">
+
+		</wsdl:part>
+
+	</wsdl:message>
+
+	<wsdl:message name="readWindmolenResponse">
+
+		<wsdl:part element="resp:readWindmolenResponse" name="parameters">
+
+		</wsdl:part>
+
+	</wsdl:message>
+
+	<wsdl:portType name="Windmolen">
+
+		<wsdl:operation name="readWindmolen">
+
+			<wsdl:input message="impl:readWindmolenRequest" name="readWindmolenRequest">
+
+			</wsdl:input>
+
+			<wsdl:output message="impl:readWindmolenResponse" name="readWindmolenResponse">
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+		<wsdl:operation name="createWindmolen">
+
+			<wsdl:input message="impl:createWindmolenRequest" name="createWindmolenRequest">
+
+			</wsdl:input>
+
+			<wsdl:output message="impl:createWindmolenResponse" name="createWindmolenResponse">
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+	</wsdl:portType>
+
+	<wsdl:binding name="WindmolenSoapBinding" type="impl:Windmolen">
+
+		<wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+		<wsdl:operation name="readWindmolen">
+
+			<wsdlsoap:operation soapAction=""/>
+
+			<wsdl:input name="readWindmolenRequest">
+
+				<wsdlsoap:body use="literal"/>
+
+			</wsdl:input>
+
+			<wsdl:output name="readWindmolenResponse">
+
+				<wsdlsoap:body use="literal"/>
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+		<wsdl:operation name="createWindmolen">
+
+			<wsdlsoap:operation soapAction=""/>
+
+			<wsdl:input name="createWindmolenRequest">
+
+				<wsdlsoap:body use="literal"/>
+
+			</wsdl:input>
+
+			<wsdl:output name="createWindmolenResponse">
+
+				<wsdlsoap:body use="literal"/>
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+	</wsdl:binding>
+
+	<wsdl:service name="WindmolenService">
+
+		<wsdl:port binding="impl:WindmolenSoapBinding" name="Windmolen">
+
+			<wsdlsoap:address location="http://localhost:4711/WindmolenOpdracht/services/Windmolen"/>
+
+		</wsdl:port>
+
+	</wsdl:service>
+
+</wsdl:definitions>
